@@ -1,0 +1,5 @@
+link do canal do youtube
+youtube channel - django lesson:
+ 
+https://www.youtube.com/watch?v=K0pVZmw_pJU&t=916s
+
