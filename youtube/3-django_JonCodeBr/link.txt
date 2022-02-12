@@ -4,3 +4,4 @@ youtube channel - django lesson - 9 hours:
 https://www.youtube.com/watch?v=K0pVZmw_pJU&t=916s
 
 parou em:
+8. Criando Objetos Utilizando o Shell (1:24:00)
