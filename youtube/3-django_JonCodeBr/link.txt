@@ -4,4 +4,3 @@ youtube channel - django lesson - 9 hours:
 https://www.youtube.com/watch?v=K0pVZmw_pJU&t=916s
 
 parou em:
-6. Conhecendo estrutura do projeto (49:49)
