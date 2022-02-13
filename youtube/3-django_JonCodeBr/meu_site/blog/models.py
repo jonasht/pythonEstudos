@@ -1,9 +1,12 @@
-from telnetlib import STATUS
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 
 # Create your models here.
+
+class PublishedManager(models.Manager):
+    def get_queryset(self):
+        return super(PublishedManager, self).get_queryset().filter(status='publicado')
 
 class Post(models.Model):
     STATUS = (
@@ -20,6 +23,10 @@ class Post(models.Model):
     status = models.CharField(
         max_length=10, choices=STATUS,
         default='rascunho')
+        
+    objects = models.Manager()
+    published = PublishedManager()
+
     class meta:
         ordering = ('-publicado',)
     def __str__(self):
