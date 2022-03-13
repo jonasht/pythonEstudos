@@ -6,3 +6,4 @@ https://www.youtube.com/watch?v=K0pVZmw_pJU&t=916s
 parou em:
 8. Criando Objetos Utilizando o Shell (1:24:00)
 11. Arquivos estáticos e template (2:09:43)
+12. Configurando URLS e listando dados na view (2:23:26)
