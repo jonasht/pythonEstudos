@@ -11,10 +11,14 @@
 <body>
     <h1>so um teste</h1>
     <hr>
-
+    
     <h1>{{ meu_titulo }}</h1>
     <ul>
         {% for item in produtos %}
+            {% if item.imagem %}
+                <img src='/media/{{ item.imagem }} '\>
+            {% endif %}
+
             <li> {{ item.id }} - {{ item.nome }} - {{ item.preco }}</li>
         {% endfor %}
     </ul>

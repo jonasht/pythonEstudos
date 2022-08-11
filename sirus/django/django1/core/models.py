@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from pyexpat import model
 from django.db import models
 
@@ -8,6 +9,8 @@ class Produto(models.Model):
     nome = models.CharField('Nome', max_length=100)
     preco = models.DecimalField('Preco', decimal_places=2, max_digits=15)
     estoque = models.IntegerField('qtd no estoque')
+    imagem = models.ImageField('IMG', blank=True, upload_to='core')
+
     
     def __str__(self) -> str:
         return self.nome
