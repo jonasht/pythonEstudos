@@ -10,3 +10,4 @@ admin.site.register(Produto, ProdutoAdmin)
 @admin.register(Cliente)
 class ClienteAdmin(admin.ModelAdmin):
     list_display = ['nome', 'sobrenome', 'email', 'data_nascimento']
+    
