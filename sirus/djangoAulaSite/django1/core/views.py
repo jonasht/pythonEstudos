@@ -1,12 +1,46 @@
-from email import message
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib import messages
+from django.contrib.auth import login, logout, authenticate
+
 
 from .models import Produto
 from .forms import ProdutoModelForm
 # Create your views here.
 
+def login_user(request):
+    # se ja estiver logado, nao fazer login de novo
+    if request.user.is_authenticated:
+        return redirect('/')
+    
+    return render(request, 'login.html')
+
+def login_submit(request):
+    if request.method == 'POST':
+        if request.POST:
+            usuario = request.POST.get('usuario')
+            senha = request.POST.get('senha')
+            user = authenticate(username=usuario, password=senha)
+
+            if user:
+                messages.success(request, 'login feito com sucesso')
+                login(request, user)
+                return redirect('/')
+            else:
+                messages.error(request, 'error: usuario ou senha invalidos')
+                return render(request, 'login.html')
+                
+    messages.error(request, 'erro ao logar, nao envio de dados')
+
+    return render(request, 'login.html')
+
+
+    
 def index(request):
+    print('=-'*49)
+    print(dir(request.user))
+    print(request.user.username)
+    print('=-'*49)
+    
     produtos = Produto.objects.all().order_by('-id')
 
     context = {

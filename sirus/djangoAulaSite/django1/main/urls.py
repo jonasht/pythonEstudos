@@ -19,13 +19,16 @@ from core.views import index
 
 from django.conf import settings
 from django.conf.urls.static import static
-from core.views import index, produto, produto_submit
+from core.views import index, produto, produto_submit, login_user, login_submit
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('produto/', produto, name='produto'),
-    # path('produto/submit', produto_submit, name='produto_submit'),
+    path('produto/submit', produto_submit, name='produto_submit'),
+    path('login/', login_user, name='login'),
+    path('login/submit', login_submit, name='login_submit'),
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
