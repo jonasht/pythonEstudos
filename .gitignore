@@ -1,4 +1,9 @@
 .env
 env
 pycache
-ignore.txt
+venv
+.venv
+__pythoncache__
+__pycache__
+copiar
+.copiar
